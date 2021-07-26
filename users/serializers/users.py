@@ -31,9 +31,9 @@ class UserSerializer(serializers.ModelSerializer):
         profile = instance.profile
 
         instance.username = validated_data.get('username', instance.username)
-        instance.first_name = validated_data.get('first_name', instance.username)
-        instance.last_name = validated_data.get('last_name', instance.username)
-        instance.email = validated_data.get('email', instance.username)
+        instance.first_name = validated_data.get('first_name', instance.first_name)
+        instance.last_name = validated_data.get('last_name', instance.last_name)
+        instance.email = validated_data.get('email', instance.email)
         instance.save()
 
         profile.age = profile_data.get('age', profile.age)
